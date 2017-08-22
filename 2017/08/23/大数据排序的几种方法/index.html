@@ -94,16 +94,17 @@
 
 
 
-<meta name="description" content="爱生活，爱xl">
-<meta property="og:type" content="website">
+<meta name="description" content="大数据排序的几种方法在秋招的笔试中遇到过好几次大数据量排序的问题，今天又在编程珠玑上看到了类似的问题，通过以前的一些积累，写几点我对大数据排序的几种方法的一些见解。 位图法位图法是我在编程珠玑上看到的一种比较新颖的方法，思路比较巧妙效率也很高。使用场景举例：对2G的数据量进行排序，这是基本要求。数据：1、每个数据不大于8亿；2、数据类型位int；3、每个数据最多重复一次。内存：最多用200M的内存">
+<meta property="og:type" content="article">
 <meta property="og:title" content="ztk">
-<meta property="og:url" content="http://onlysyz.github.io/index.html">
+<meta property="og:url" content="http://onlysyz.github.io/2017/08/23/大数据排序的几种方法/index.html">
 <meta property="og:site_name" content="ztk">
-<meta property="og:description" content="爱生活，爱xl">
+<meta property="og:description" content="大数据排序的几种方法在秋招的笔试中遇到过好几次大数据量排序的问题，今天又在编程珠玑上看到了类似的问题，通过以前的一些积累，写几点我对大数据排序的几种方法的一些见解。 位图法位图法是我在编程珠玑上看到的一种比较新颖的方法，思路比较巧妙效率也很高。使用场景举例：对2G的数据量进行排序，这是基本要求。数据：1、每个数据不大于8亿；2、数据类型位int；3、每个数据最多重复一次。内存：最多用200M的内存">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-08-22T16:15:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ztk">
-<meta name="twitter:description" content="爱生活，爱xl">
+<meta name="twitter:description" content="大数据排序的几种方法在秋招的笔试中遇到过好几次大数据量排序的问题，今天又在编程珠玑上看到了类似的问题，通过以前的一些积累，写几点我对大数据排序的几种方法的一些见解。 位图法位图法是我在编程珠玑上看到的一种比较新颖的方法，思路比较巧妙效率也很高。使用场景举例：对2G的数据量进行排序，这是基本要求。数据：1、每个数据不大于8亿；2、数据类型位int；3、每个数据最多重复一次。内存：最多用200M的内存">
 
 
 
@@ -133,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://onlysyz.github.io/"/>
+  <link rel="canonical" href="http://onlysyz.github.io/2017/08/23/大数据排序的几种方法/"/>
 
 
 
 
 
-  <title>ztk</title>
+  <title> | ztk</title>
   
 
 
@@ -158,9 +159,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -273,9 +272,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -305,9 +304,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/23/大数据排序的几种方法/" itemprop="url">未命名</a></h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -357,9 +354,7 @@
       
 
       
-        
-          
-            <h1 id="大数据排序的几种方法"><a href="#大数据排序的几种方法" class="headerlink" title="大数据排序的几种方法"></a>大数据排序的几种方法</h1><p>在秋招的笔试中遇到过好几次大数据量排序的问题，今天又在编程珠玑上看到了类似的问题，通过以前的一些积累，写几点我对大数据排序的几种方法的一些见解。</p>
+        <h1 id="大数据排序的几种方法"><a href="#大数据排序的几种方法" class="headerlink" title="大数据排序的几种方法"></a>大数据排序的几种方法</h1><p>在秋招的笔试中遇到过好几次大数据量排序的问题，今天又在编程珠玑上看到了类似的问题，通过以前的一些积累，写几点我对大数据排序的几种方法的一些见解。</p>
 <h3 id="位图法"><a href="#位图法" class="headerlink" title="位图法"></a>位图法</h3><p>位图法是我在编程珠玑上看到的一种比较新颖的方法，思路比较巧妙效率也很高。<br>使用场景举例：对2G的数据量进行排序，这是基本要求。<br>数据：1、每个数据不大于8亿；2、数据类型位int；3、每个数据最多重复一次。<br>内存：最多用200M的内存进行操作。<br>首先对占用的内存进行判断，每个数据不大于8亿，那么8亿是一个什么概念呢。<br>1 byte = 8 bit（位<br>881024 byte = 8<em>1024 bit = 1k<br>1024 k = 8</em>1024*1024 bit = 1M = 8388608 bit<br>也就是1M=8388608位<br>而位图法的基本思想就是利用一位代表一个数字，例如3位上为1,则说明3在数据中出现过，若为0，则说明3在数据中没有出现过。所以当题目中出现每个数据最多重复一次这个条件时，我们可以考虑使用位图法来进行大数据排序。<br>那么假如使用位图法来进行这题的排序，内存占用多少呢。由题目知道每个数据不大于8亿，那么我们就需要8亿位，占用800000000/8388608=95M的空间，满足最多使用200M内存进行操作的条件，这也是这题能够使用位图法来解决的一个基础。</p>
 <hr>
 <p>###堆排序法<br>堆排序是4种平均时间复杂度为nlogn的排序方法之一，其优点在于当求M个数中的前n个最大数，和最小数的时候性能极好。所以当从海量数据中要找出前m个最大值或最小值，而对其他值没有要求时，使用堆排序法效果很好。<br>使用场景：从1亿个整数里找出100个最大的数<br>步骤：<br>1.读取前100个数字，建立最大值堆。（这里采用堆排序将空间复杂度讲得很低，要排序1亿个数，但一次性只需读取100个数字，或者设置其他基数，不需要1次性读完所有数据，降低对内存要求）<br>2、依次读取余下的数，与最大值堆作比较，维持最大值堆。可以每次读取的数量为一个磁盘页面，将每个页面的数据依次进堆比较，这样节省IO时间。<br>3.将堆进行排序，即可得到100个有序最大值。<br>堆排序是一种常见的算法，但了解其的使用场景能够帮助我们更好的理解它。<br><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line">public boolean heapSort(List&lt;E&gt; list)&#123;//排序  </div><div class="line">    return heapSort(list, list.size());  </div><div class="line">&#125;  </div><div class="line"></div><div class="line">public boolean heapSort(List&lt;E&gt; list, int n)&#123;  </div><div class="line">    if(null == list || 0 == list.size())&#123;  </div><div class="line">        return false;  </div><div class="line">    &#125;  </div><div class="line">    if(!heapCreate(list, n))&#123;  </div><div class="line">        return false;  </div><div class="line">    &#125;  </div><div class="line">    for(int i = n; i &gt; 0; --i)&#123;  </div><div class="line">        swap(list, 0, i - 1);  </div><div class="line">        heapAdjust(list, 0, i - 1);  </div><div class="line">    &#125;  </div><div class="line">    return true;  </div><div class="line">&#125;  </div><div class="line"></div><div class="line">public boolean heapCreate(List&lt;E&gt; list, int length)&#123; //创建小根堆  </div><div class="line">    if(null == list || 0 == list.size())&#123;  </div><div class="line">        return false;  </div><div class="line">    &#125;  </div><div class="line">    for(int i = (length / 2 - 1); i &gt;= 0; --i)&#123;  </div><div class="line">        if(!heapAdjust(list, i, length))&#123;  </div><div class="line">            return false;  </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line">    return true;  </div><div class="line">&#125;  </div><div class="line"></div><div class="line">public boolean heapAdjust(List&lt;E&gt; list, int middle, int length)&#123;//调整堆，使其满足小根堆的条件  </div><div class="line">    if(null == list || 0 == list.size())&#123;  </div><div class="line">        return false;  </div><div class="line">    &#125;  </div><div class="line">    E temp = list.get(middle);  </div><div class="line">    for(int i = (2 * middle + 1); i &lt; length; i *= 2)&#123;  </div><div class="line">        if(i &lt; (length - 1) &amp;&amp; !this.compare(list.get(i), list.get(i + 1)))&#123;  </div><div class="line">            ++i;  </div><div class="line">        &#125;  </div><div class="line">        if(this.compare(temp,list.get(i)))&#123;  </div><div class="line">            break;  </div><div class="line">        &#125;  </div><div class="line">        list.set(middle, list.get(i));  </div><div class="line">        middle = i;  </div><div class="line">    &#125;  </div><div class="line">    list.set(middle, temp);  </div><div class="line">    return true;  </div><div class="line">&#125;  </div><div class="line"></div><div class="line">public void swap(List&lt;E&gt; list, int i, int j)&#123;//数据交换  </div><div class="line">    E temp = list.get(i);  </div><div class="line">    list.set(i, list.get(j));  </div><div class="line">    list.set(j, temp);  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -368,8 +363,6 @@
 <hr>
 <h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>以上是个人关于大数据排序算法的一些想法和总结，欢迎指教～</p>
 
-          
-        
       
     </div>
     
@@ -386,12 +379,12 @@
       
 
       
+      
+      
 
       
 
       
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -401,10 +394,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -412,6 +406,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -432,8 +430,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/timg.jpeg"
@@ -508,6 +515,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#大数据排序的几种方法"><span class="nav-number">1.</span> <span class="nav-text">大数据排序的几种方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#位图法"><span class="nav-number">1.0.1.</span> <span class="nav-text">位图法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#较为通用的分治策略"><span class="nav-number">1.0.2.</span> <span class="nav-text">较为通用的分治策略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最后"><span class="nav-number">1.0.3.</span> <span class="nav-text">最后</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -624,10 +647,10 @@
   
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
-  
+
 
   
 
